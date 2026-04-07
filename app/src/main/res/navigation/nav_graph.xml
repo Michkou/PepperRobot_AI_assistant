@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startChildFragment">
+
+    <!-- 1. Écran de démarrage "StartChildFragment" -->
+    <fragment
+        android:id="@+id/startChildFragment"
+        android:name="com.example.pepperapp.ui.Fragments.StartChildFragment"
+        android:label="Start"
+        tools:layout="@layout/fragment_start_child">
+        <action
+            android:id="@+id/action_startChildFragment_to_chooseFragment"
+            app:destination="@id/chooseFragment" />
+    </fragment>
+
+    <!-- 2. Écran de choix -->
+    <fragment
+        android:id="@+id/chooseFragment"
+        android:name="com.example.pepperapp.ui.Fragments.ChooseFragment"
+        android:label="Choose"
+        tools:layout="@layout/fragment_choose">
+        <action
+            android:id="@+id/action_chooseFragment_to_listenStoryFragment"
+            app:destination="@id/listenStoryFragment" />
+        <action
+            android:id="@+id/action_chooseFragment_to_storySelectionFragment"
+            app:destination="@id/storySelectionFragment" />
+
+        <action
+            android:id="@+id/action_chooseFragment_to_questionnaireSelectionFragment"
+            app:destination="@id/questionnaireSelectionFragment" />
+
+        <action
+            android:id="@+id/action_chooseFragment_to_pepperStoriesSelectionFragment"
+            app:destination="@id/pepperStoriesSelectionFragment" />
+    </fragment>
+    <!-- Fragment de jeu -->
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.pepperapp.ui.Fragments.GameFragment"
+        android:label="Jeu"
+        tools:layout="@layout/fragment_game">
+        <argument
+            android:name="storyId"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/questionnaireSelectionFragment"
+        android:name="com.example.pepperapp.ui.Fragments.QuestionnaireSelectionFragment"
+        android:label="QuestionnaireSelectionFragment"
+        tools:layout="@layout/fragment_questionnaire_selection">
+        <action
+            android:id="@+id/action_questionnaireSelectionFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+
+    <!-- 3.a Écouter l’histoire -->
+    <fragment
+        android:id="@+id/listenStoryFragment"
+        android:name="com.example.pepperapp.ui.Fragments.ListenStoryFragment"
+        android:label="Écouter l’histoire"
+        tools:layout="@layout/fragment_listen_story">
+        <argument
+            android:name="storyId"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/storySelectionFragment"
+        android:name="com.example.pepperapp.ui.Fragments.StorySelectionFragment"
+        android:label="Sélection d'histoire"
+        tools:layout="@layout/fragment_story_selection">
+        <action
+            android:id="@+id/action_storySelectionFragment_to_listenStoryFragment"
+            app:destination="@id/listenStoryFragment" />
+
+        <action
+            android:id="@+id/action_storySelectionFragment_to_pepperStoryFragment"
+            app:destination="@id/pepperStoryFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/pepperStoryFragment"
+        android:name="com.example.pepperapp.ui.Fragments.PepperStoryFragment"
+        android:label="Histoire de Pepper"
+        tools:layout="@layout/fragment_listen_story" />
+
+    <fragment
+        android:id="@+id/pepperStoriesSelectionFragment"
+        android:name="com.example.pepperapp.ui.Fragments.PepperStoriesSelectionFragment"
+        android:label="Les Histoires de Pepper"
+        tools:layout="@layout/fragment_pepper_stories_selection">
+        <action
+            android:id="@+id/action_pepperStoriesSelectionFragment_to_listenStoryFragment"
+            app:destination="@id/listenStoryFragment" />
+    </fragment>
+
+</navigation>
