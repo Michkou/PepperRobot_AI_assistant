@@ -19,13 +19,23 @@ class PepperStoriesSelectionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.buttonStory1WithEmotion).setOnClickListener {
-            val bundle = androidx.core.os.bundleOf("storyId" to 1)
+        view.findViewById<Button>(R.id.buttonMoumouteWithEmotion).setOnClickListener {
+            val bundle = androidx.core.os.bundleOf("storyId" to 1, "withEmotion" to true)
             findNavController().navigate(R.id.action_pepperStoriesSelectionFragment_to_listenStoryFragment, bundle)
         }
 
-        view.findViewById<Button>(R.id.buttonStory2NoEmotion).setOnClickListener {
-            val bundle = androidx.core.os.bundleOf("storyId" to 2)
+        view.findViewById<Button>(R.id.buttonMoumouteNoEmotion).setOnClickListener {
+            val bundle = androidx.core.os.bundleOf("storyId" to 1, "withEmotion" to false)
+            findNavController().navigate(R.id.action_pepperStoriesSelectionFragment_to_listenStoryFragment, bundle)
+        }
+
+        view.findViewById<Button>(R.id.buttonFootWithEmotion).setOnClickListener {
+            val bundle = androidx.core.os.bundleOf("storyId" to 3, "withEmotion" to true)
+            findNavController().navigate(R.id.action_pepperStoriesSelectionFragment_to_listenStoryFragment, bundle)
+        }
+
+        view.findViewById<Button>(R.id.buttonFootNoEmotion).setOnClickListener {
+            val bundle = androidx.core.os.bundleOf("storyId" to 3, "withEmotion" to false)
             findNavController().navigate(R.id.action_pepperStoriesSelectionFragment_to_listenStoryFragment, bundle)
         }
 

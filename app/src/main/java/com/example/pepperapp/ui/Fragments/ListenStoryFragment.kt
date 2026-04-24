@@ -265,9 +265,10 @@ class ListenStoryFragment : Fragment(), RobotLifecycleCallbacks {
             try {
                 // Retrieve storyId again
                 val storyId = arguments?.getInt("storyId") ?: 1
+                val withEmotion = arguments?.getBoolean("withEmotion", true) ?: true
                 
-                // Disable BasicAwareness for story 2 & 4 so Pepper stays completely still
-                if (storyId == 2 || storyId == 4) {
+                // Disable BasicAwareness for no-emotion mode so Pepper stays completely still
+                if (!withEmotion) {
                     try {
                         val holder = HolderBuilder.with(context)
                             .withAutonomousAbilities(AutonomousAbilitiesType.BASIC_AWARENESS)
@@ -280,12 +281,14 @@ class ListenStoryFragment : Fragment(), RobotLifecycleCallbacks {
                 }
 
                 // Select animations list
-                val currentAnimations = when(storyId) {
-                    1 -> animationsStory2
-                    2 -> emptyList<String>()
-                    3 -> animationsStory4
-                    4 -> emptyList<String>()
-                    else -> emptyList<String>()
+                val currentAnimations = if (withEmotion) {
+                    when(storyId) {
+                        1 -> animationsStory2
+                        3 -> animationsStory4
+                        else -> emptyList<String>()
+                    }
+                } else {
+                    emptyList<String>()
                 }
                 
                 val currentImages = when(storyId) {
@@ -311,21 +314,23 @@ class ListenStoryFragment : Fragment(), RobotLifecycleCallbacks {
                             bgImage.setImageResource(resId)
                             
                             // --- Effets d'empathie visuelle ---
-                            if (storyId == 3) {
-                                // Index 11 : "Ce que tu peux être lourd ! Quel boulet !" -> Tremblement de moquerie
-                                if (index == 11) shakeImage(bgImage)
-                                
-                                // Index 13 or 14 : Helmouth est envoyé dans les buts, seul -> Zoom arrière (Recul de solitude)
-                                if (index == 13 || index == 14) zoomOutImage(bgImage)
-                            } else if (storyId == 1) {
-                                // Index 3: Tempête emporte la touffe -> Choc / Tremblement
-                                if (index == 3) shakeImage(bgImage)
-                                
-                                // Index 5: Helmouth seul, rejeté, très triste -> Solitude / Zoom arrière
-                                if (index == 5) zoomOutImage(bgImage)
-                                
-                                // Index 8 à 12: Tous les animaux explosent de rire tour à tour -> Tremblement
-                                if (index in 8..12) shakeImage(bgImage)
+                            if (withEmotion) {
+                                if (storyId == 3) {
+                                    // Index 11 : "Ce que tu peux être lourd ! Quel boulet !" -> Tremblement de moquerie
+                                    if (index == 11) shakeImage(bgImage)
+                                    
+                                    // Index 13 or 14 : Helmouth est envoyé dans les buts, seul -> Zoom arrière (Recul de solitude)
+                                    if (index == 13 || index == 14) zoomOutImage(bgImage)
+                                } else if (storyId == 1) {
+                                    // Index 3: Tempête emporte la touffe -> Choc / Tremblement
+                                    if (index == 3) shakeImage(bgImage)
+                                    
+                                    // Index 5: Helmouth seul, rejeté, très triste -> Solitude / Zoom arrière
+                                    if (index == 5) zoomOutImage(bgImage)
+                                    
+                                    // Index 8 à 12: Tous les animaux explosent de rire tour à tour -> Tremblement
+                                    if (index in 8..12) shakeImage(bgImage)
+                                }
                             }
                         }
                     }
@@ -334,10 +339,10 @@ class ListenStoryFragment : Fragment(), RobotLifecycleCallbacks {
 
                     val sayBuilder = SayBuilder.with(context)
                         .withLocale(localeFR)
-                        .withText(line)
+                        .withText(if (withEmotion) line else cleanLine)
 
-                    // Désactiver le langage corporel (mouvements des mains) pour l'histoire 2 et 4
-                    if (storyId == 2 || storyId == 4) {
+                    // Désactiver le langage corporel (mouvements des mains) pour le mode sans émotion
+                    if (!withEmotion) {
                         sayBuilder.withBodyLanguageOption(com.aldebaran.qi.sdk.`object`.conversation.BodyLanguageOption.DISABLED)
                     }
 

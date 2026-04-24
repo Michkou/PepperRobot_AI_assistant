@@ -38,7 +38,7 @@ android {
 dependencies {
 
     // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.21"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.31"
 
     // AndroidX
     implementation 'androidx.core:core-ktx:1.6.0'
@@ -61,7 +61,7 @@ dependencies {
     implementation "androidx.room:room-ktx:2.4.2"
 
     // Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
 
     // Network
     implementation 'com.squareup.okhttp3:okhttp:4.10.0'
@@ -79,6 +79,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     // Firebase
-    implementation platform('com.google.firebase:firebase-bom:32.2.0')
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
     implementation 'com.google.firebase:firebase-firestore-ktx'
 }

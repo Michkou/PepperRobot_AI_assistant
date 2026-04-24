@@ -59,7 +59,7 @@ object StoryRepository {
                 Question("Q8 : Avec quoi Picpic rase la tête des animaux ?", listOf("Un caillou" to R.drawable.emoji_caillou, "Des ciseaux" to R.drawable.emoji_ciseaux, "Une brosse" to R.drawable.emoji_brosse, "Un bâton" to R.drawable.emoji_baton), 0)
             )
         ),
-        // Story 2: Le dessin d'Helmouth (Old ID 3)
+        // Story 2: Le dessin d'Helmouth
         Story(
             id = 2,
             title = "Le dessin de Helmouth",
