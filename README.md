@@ -8,13 +8,13 @@
 > **LIRMM**
 > Developed by **Bouaboud Karima**
 
-**YourBestFriendPepper** is an Android application designed for the **Pepper** humanoid robot (SoftBank Robotics). The app offers children aged **5 to 6** an interactive journey to identify, express, and understand emotions through storytelling and interactive quizzes about the adventures of Helmouth the mammoth.
+**YourBestFriendPepper** is an Android application designed for the **Pepper** humanoid robot (SoftBank Robotics). The app offers children aged **5 to 8** an interactive journey to identify, express, and understand emotions through storytelling and interactive quizzes about the adventures of Helmouth the mammoth.
 
 ---
 
 ## Target Audience
 
-* **Age Range:** 5 – 6 years
+* **Age Range:** 5 – 8 years
 * **Settings:** kindergartens, educational workshops, child–robot mediation
 
 ---
@@ -31,7 +31,7 @@
 
 ## 🔍 Research Question
 
-> **“How does a speech-touch bimodal interaction with the Pepper humanoid robot affect emotion-recognition and verbalization in preschoolers (5–6 years)?”**
+> **“How does a speech-touch bimodal interaction with the Pepper humanoid robot affect emotion-recognition and verbalization in preschoolers (5–8 years)?”**
 
 This question guides the experimental study described in the internship report. The present README focuses on the software implementation.
 
