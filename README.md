@@ -1,87 +1,72 @@
 <div align="center">
-  <img src="./doc/iconpepper.png" width="40%" alt="YourBestFriendPepper logo">
+  <img src="./doc/iconpepper.png" width="40%" alt="Logo YourBestFriendPepper">
 </div>
 
 # YourBestFriendPepper
 
-> **Facultative Internship (6 months)**
+> **Stage de Recherche et Développement (6 mois)**
 > **LIRMM**
-> Developed by **Bouaboud Karima**
+> Développé par **Bouaboud Karima**
 
-**YourBestFriendPepper** is an Android application designed for the **Pepper** humanoid robot (SoftBank Robotics). The app offers children aged **5 to 8** an interactive journey to identify, express, and understand emotions through storytelling and interactive quizzes about the adventures of Helmouth the mammoth.
-
----
-
-## Target Audience
-
-* **Age Range:** 5 – 8 years
-* **Settings:** kindergartens, educational workshops, child–robot mediation
+**YourBestFriendPepper** est une application Android interactive conçue pour le robot humanoïde **Pepper** (SoftBank Robotics), accompagnée d'une plateforme web complémentaire. L'application propose aux enfants de **5 à 8 ans** une expérience immersive de narration (Storytelling) autour des aventures d'Helmouth le mammouth.
 
 ---
 
-##  Educational Goals
+## 🎯 Objectifs Pédagogiques
 
-| Goal                      | Description                                                            |
-| ------------------------- | ---------------------------------------------------------------------- |
-| **Emotion recognition**   | Identify and understand emotions through the stories of Helmouth the mammoth. |
-| **Cognitive engagement**  | Encourage children to answer comprehension and emotional quizzes.      |
-| **Multimodal engagement** | Combine oral narration **and** interactive quizzes to reinforce learning. |
-
----
-
-## 🔍 Research Question
-
-> **“How does a speech-touch bimodal interaction with the Pepper humanoid robot affect emotion-recognition and verbalization in preschoolers (5–8 years)?”**
-
-This question guides the experimental study described in the internship report. The present README focuses on the software implementation.
+| Objectif | Description |
+| :--- | :--- |
+| **Compréhension Narrative** | Évaluer la capacité de l'enfant à retenir et comprendre les éléments clés d'une histoire. |
+| **Reconnaissance Émotionnelle** | Aider l'enfant à identifier les émotions vécues par les personnages (colère, tristesse, fierté...). |
+| **Engagement Multimodal** | Combiner la voix, les gestes du robot et les interactions tactiles sur tablette pour maintenir l'attention de l'enfant. |
 
 ---
 
-## User Flow
+## 🔍 Question de Recherche
 
-1. **Welcome Screen:** illustration + **Start** button.
-2. **Main Menu:** multiple features — Listen to a story • Experimental Questionnaire.
-3. **Experimental Flow (New):** A complete bimodal experiment pipeline:
-   * **Survey Avant:** Age, story knowledge, and 10 perception questions.
-   * **Story Comprehension:** Dynamic 8-question quiz based on the selected condition (e.g., With/Without Emotion).
-   * **Survey Après:** 10 final perception questions, followed by automatic data upload to Firebase.
-4. **Stories:**
-   * *La moumoute du mammouth Helmouth*
-   * *Le dessin de Helmouth*
-   * *Le mammouth Helmouth joue au foot*
-   * *Helmouth a perdu sa confiance*
-4. **Quiz:** multiple‑choice questions to validate understanding of the stories and emotions.
-<img src="./doc/Pepper-Enfant TER.png" width="80%" alt="YourBestFriendPepper screen flow">
+L'application a été développée comme outil technologique principal pour répondre à la problématique scientifique suivante :
+
+> **« Dans quelle mesure la présence physique (Robot vs Web) et l'expressivité émotionnelle (Avec vs Sans émotion) d'un robot conteur influencent-elles la compréhension de l'histoire et la perception de la machine par l'enfant ? »**
+
+Cette étude comparative repose sur un protocole rigoureux de 8 conditions expérimentales croisant l'incarnation physique et les indices émotionnels. Ce *README* se concentre sur l'implémentation logicielle de ce protocole.
 
 ---
 
-## 🛠️ Technology Stack
+## 📱 Parcours Utilisateur (User Flow)
 
-| Technology                                    | Purpose                                                                             |
-| --------------------------------------------- | ----------------------------------------------------------------------------------- |
-| **Android Studio Bumblebee 2021.1.1 Patch 1** | Development & deployment on Pepper                                                  |
-| **QiSDK**                                     | Access to Pepper’s voice, motion, and tactile sensors (robot running **NAOqi 2.9**) |
-| **Kotlin**                                    | Main language (fragment‑based architecture)                                         |
-| **Firebase Firestore**                        | Cloud database for storing experimental sessions and children's responses           |
-| **Room / SQLite**                             | Local persistence (quiz answers, logs)                                              |
+1. **Écran d'accueil :** Illustration thématique et bouton **Démarrer**.
+2. **Menu Principal :** Accès aux fonctionnalités principales — Mode Écoute Simple • Mode Questionnaire Expérimental.
+3. **Flux Expérimental (Nouveau protocole) :**
+   * **Questionnaire Avant (Pré-test) :** Saisie de l'âge, vérification des connaissances préalables et 10 questions sur la perception anticipée du robot (échelle de Likert visuelle).
+   * **Compréhension de l'Histoire :** Quiz dynamique de 8 questions généré selon la condition expérimentale.
+   * **Questionnaire Après (Post-test) :** 10 questions finales sur le ressenti de l'enfant, suivies de l'envoi transparent et automatique des données vers le Cloud (Firebase).
 
 ---
 
-## ⚡ Setup & Requirements
+## 🛠️ Technologies Utilisées (Stack Technologique)
 
-1. **Start Pepper:** press the button under the screen **once** to boot.
-2. **Network:** connect Pepper and your laptop to the same Wi‑Fi or mobile hotspot.
-3. **ADB Connection:** pull down Pepper’s notification bar to get the IP address, then:
+| Technologie | Objectif |
+| :--- | :--- |
+| **Android Studio (Bumblebee)** | Environnement de développement principal pour l'application Pepper. |
+| **QiSDK (NAOqi 2.9)** | Bibliothèque d'accès aux capteurs vocaux, de mouvement et tactiles de Pepper. |
+| **Kotlin** | Langage de programmation principal (architecture basée sur des Fragments). |
+| **Firebase Firestore** | Base de données Cloud NoSQL centralisant les sessions expérimentales et les réponses des enfants pour l'analyse statistique. |
+| **React / Vite** | Frameworks web pour le développement du site interactif (condition "Web" de l'expérience). |
 
+---
+
+## ⚡ Installation & Prérequis
+
+1. **Démarrer Pepper :** Appuyez une fois sur le bouton situé sous la tablette pour l'allumer.
+2. **Réseau :** Connectez Pepper et votre ordinateur portable au même réseau Wi-Fi ou partage de connexion.
+3. **Connexion ADB :** Faites glisser la barre de notification de Pepper vers le bas pour lire son adresse IP, puis tapez dans votre terminal :
    ```bash
    adb connect <PEPPER_IP>:5555
    ```
-6. **Android Studio:**
-
-   * Open the project with **Android Studio Bumblebee**.
-   * Verify Pepper appears as a connected device.
-   * If not:
-
+4. **Android Studio :**
+   * Ouvrez le projet avec **Android Studio Bumblebee**.
+   * Assurez-vous que Pepper apparaît bien dans la liste des appareils connectés.
+   * En cas de problème de connexion :
      ```bash
      adb kill-server
      adb start-server
@@ -90,31 +75,33 @@ This question guides the experimental study described in the internship report. 
 
 ---
 
-## ▶️ Run the App
+## ▶️ Lancer l'Application
 
-1. Boot Pepper.
-2. Establish **ADB connection**.
-3. In Android Studio, select Pepper and press ▶️ to install and launch the app.
+1. Démarrez le robot Pepper.
+2. Établissez la connexion ADB.
+3. Dans Android Studio, sélectionnez l'appareil Pepper et appuyez sur **▶️ (Run)** pour installer et lancer l'application.
 
 ---
 
-## Code Structure
+## 📂 Structure du Code
 
-```
+```text
 app/
  ├─ ui/
  │   ├─ MainActivity.kt       
  │   └─ Fragments/
- │       ├─ StorySelectionFragment.kt # story selection list
- │       ├─ ListenStoryFragment.kt    # reads the story
- │       ├─ ExperimentSelectionFragment.kt # 8 experimental conditions
- │       ├─ SurveyAvantFragment.kt    # Pre-experiment questions
- │       ├─ StoryComprehensionFragment.kt # Dynamic story quiz
- │       └─ SurveyApresFragment.kt    # Post-experiment questions & Firebase upload
- ├─ data/                     # Data models, Room DB, and SessionManager (Firebase logic)
- └─ assets/animations/        # .qianim animation files
+ │       ├─ StorySelectionFragment.kt      # Menu des histoires basiques
+ │       ├─ ListenStoryFragment.kt         # Moteur de lecture de l'histoire
+ │       ├─ ExperimentSelectionFragment.kt # Interface des 8 conditions (EL1, NL1...)
+ │       ├─ SurveyAvantFragment.kt         # Questions pré-expérience (UI & Logique)
+ │       ├─ StoryComprehensionFragment.kt  # Quiz dynamique de compréhension
+ │       └─ SurveyApresFragment.kt         # Questions post-expérience & envoi Firebase
+ ├─ data/                                  # Modèles (Story, Question) & SessionManager
+ └─ assets/animations/                     # Fichiers de mouvements du robot (.qianim)
 ```
 
 ---
 
-> *“Pepper isn’t just a robot — he’s children’s best friend!”* 🤖💛
+<div align="center">
+  <i>« Pepper n'est pas juste un robot — c'est le meilleur ami des enfants ! »</i> 🤖💛
+</div>
