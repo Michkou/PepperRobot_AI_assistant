@@ -51,6 +51,10 @@ class ChooseFragment : Fragment() {
             findNavController().navigate(R.id.action_chooseFragment_to_pepperStoriesSelectionFragment)
         }
 
+        view.findViewById<Button>(R.id.buttonExperiment).setOnClickListener {
+            findNavController().navigate(R.id.action_chooseFragment_to_experimentSelectionFragment)
+        }
+
         view.findViewById<Button>(R.id.buttonListenStory).setOnClickListener {
             findNavController().navigate(R.id.action_chooseFragment_to_storySelectionFragment)
 

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@drawable/backgroundmammouth2">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choisissez la condition expérimentale"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="24dp"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Histoire 1 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Histoire 1 : La moumoute du mammouth"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:shadowColor="#000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"/>
+
+            <Button android:id="@+id/btn_H1_EL1" style="@style/Widget.MaterialComponents.Button" app:backgroundTint="#81B9E6" android:textColor="#000000" android:textStyle="bold" android:layout_width="350dp" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="H1 - Robot Avec Emotion (EL1)"/>
+            <Button android:id="@+id/btn_H1_NL1" style="@style/Widget.MaterialComponents.Button" app:backgroundTint="#81B9E6" android:textColor="#000000" android:textStyle="bold" android:layout_width="350dp" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="H1 - Robot Sans Emotion (NL1)"/>
+            <Button android:id="@+id/btn_H1_EO1" style="@style/Widget.MaterialComponents.Button" app:backgroundTint="#81B9E6" android:textColor="#000000" android:textStyle="bold" android:layout_width="350dp" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="H1 - Web Avec Emotion (EO1)"/>
+            <Button android:id="@+id/btn_H1_NO1" style="@style/Widget.MaterialComponents.Button" app:backgroundTint="#81B9E6" android:textColor="#000000" android:textStyle="bold" android:layout_width="350dp" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="H1 - Web Sans Emotion (NO1)"/>
+
+            <!-- Histoire 2 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Histoire 2 : Le mammouth joue au foot"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:shadowColor="#000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"/>
+
+            <Button android:id="@+id/btn_H2_EL2" style="@style/Widget.MaterialComponents.Button" app:backgroundTint="#FFA3F6" android:textColor="#000000" android:textStyle="bold" android:layout_width="350dp" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="H2 - Robot Avec Emotion (EL2)"/>
+            <Button android:id="@+id/btn_H2_NL2" style="@style/Widget.MaterialComponents.Button" app:backgroundTint="#FFA3F6" android:textColor="#000000" android:textStyle="bold" android:layout_width="350dp" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="H2 - Robot Sans Emotion (NL2)"/>
+            <Button android:id="@+id/btn_H2_EO2" style="@style/Widget.MaterialComponents.Button" app:backgroundTint="#FFA3F6" android:textColor="#000000" android:textStyle="bold" android:layout_width="350dp" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="H2 - Web Avec Emotion (EO2)"/>
+            <Button android:id="@+id/btn_H2_NO2" style="@style/Widget.MaterialComponents.Button" app:backgroundTint="#FFA3F6" android:textColor="#000000" android:textStyle="bold" android:layout_width="350dp" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="H2 - Web Sans Emotion (NO2)"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/buttonBackExperiment"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Retour"
+        app:backgroundTint="#CCCCCC"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

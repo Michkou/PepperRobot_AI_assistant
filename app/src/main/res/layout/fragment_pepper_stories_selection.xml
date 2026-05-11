@@ -54,7 +54,7 @@
             android:id="@+id/buttonFootWithEmotion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Le mammouth Helmouth joue au foot ( Avec Emotion )"
+            android:text="Le mammouth Helmouth joue au fout ( Avec Emotion )"
             android:backgroundTint="#FFA3F6"
             android:textColor="#000000"
             android:textStyle="bold"

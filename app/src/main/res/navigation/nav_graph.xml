@@ -36,6 +36,10 @@
         <action
             android:id="@+id/action_chooseFragment_to_pepperStoriesSelectionFragment"
             app:destination="@id/pepperStoriesSelectionFragment" />
+
+        <action
+            android:id="@+id/action_chooseFragment_to_experimentSelectionFragment"
+            app:destination="@id/experimentSelectionFragment" />
     </fragment>
     <!-- Fragment de jeu -->
     <fragment
@@ -101,5 +105,41 @@
             android:id="@+id/action_pepperStoriesSelectionFragment_to_listenStoryFragment"
             app:destination="@id/listenStoryFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/experimentSelectionFragment"
+        android:name="com.example.pepperapp.ui.Fragments.ExperimentSelectionFragment"
+        android:label="Experiment Selection"
+        tools:layout="@layout/fragment_experiment_selection">
+        <action
+            android:id="@+id/action_experimentSelectionFragment_to_surveyAvantFragment"
+            app:destination="@id/surveyAvantFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/surveyAvantFragment"
+        android:name="com.example.pepperapp.ui.Fragments.SurveyAvantFragment"
+        android:label="Survey Avant"
+        tools:layout="@layout/fragment_survey_avant">
+        <action
+            android:id="@+id/action_surveyAvantFragment_to_storyComprehensionFragment"
+            app:destination="@id/storyComprehensionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/storyComprehensionFragment"
+        android:name="com.example.pepperapp.ui.Fragments.StoryComprehensionFragment"
+        android:label="Story Comprehension"
+        tools:layout="@layout/fragment_story_comprehension">
+        <action
+            android:id="@+id/action_storyComprehensionFragment_to_surveyApresFragment"
+            app:destination="@id/surveyApresFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/surveyApresFragment"
+        android:name="com.example.pepperapp.ui.Fragments.SurveyApresFragment"
+        android:label="Survey Apres"
+        tools:layout="@layout/fragment_survey_apres" />
 
 </navigation>
