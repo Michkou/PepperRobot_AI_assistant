@@ -40,8 +40,12 @@ This question guides the experimental study described in the internship report. 
 ## User Flow
 
 1. **Welcome Screen:** illustration + **Start** button.
-2. **Main Menu:** two main features — Listen to a story • Comprehension quiz.
-3. **Stories:**
+2. **Main Menu:** multiple features — Listen to a story • Experimental Questionnaire.
+3. **Experimental Flow (New):** A complete bimodal experiment pipeline:
+   * **Survey Avant:** Age, story knowledge, and 10 perception questions.
+   * **Story Comprehension:** Dynamic 8-question quiz based on the selected condition (e.g., With/Without Emotion).
+   * **Survey Après:** 10 final perception questions, followed by automatic data upload to Firebase.
+4. **Stories:**
    * *La moumoute du mammouth Helmouth*
    * *Le dessin de Helmouth*
    * *Le mammouth Helmouth joue au foot*
@@ -58,7 +62,8 @@ This question guides the experimental study described in the internship report. 
 | **Android Studio Bumblebee 2021.1.1 Patch 1** | Development & deployment on Pepper                                                  |
 | **QiSDK**                                     | Access to Pepper’s voice, motion, and tactile sensors (robot running **NAOqi 2.9**) |
 | **Kotlin**                                    | Main language (fragment‑based architecture)                                         |
-| **Room / SQLite**                             | Local persistence (quiz answers, logs)                                              |
+| **Firebase Firestore**                        | Cloud database for storing experimental sessions and children's responses           |
+| **Room / SQLite**                             | Local persistence (quiz answers, logs)                                              |
 
 ---
 
@@ -102,8 +107,11 @@ app/
  │   └─ Fragments/
  │       ├─ StorySelectionFragment.kt # story selection list
  │       ├─ ListenStoryFragment.kt    # reads the story
- │       └─ …
- ├─ data/                     # Room database (quiz, logs)
+ │       ├─ ExperimentSelectionFragment.kt # 8 experimental conditions
+ │       ├─ SurveyAvantFragment.kt    # Pre-experiment questions
+ │       ├─ StoryComprehensionFragment.kt # Dynamic story quiz
+ │       └─ SurveyApresFragment.kt    # Post-experiment questions & Firebase upload
+ ├─ data/                     # Data models, Room DB, and SessionManager (Firebase logic)
  └─ assets/animations/        # .qianim animation files
 ```
 
